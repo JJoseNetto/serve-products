@@ -1,9 +1,9 @@
-import { pgTable, serial, varchar, numeric, timestamp } from 'drizzle-orm/pg-core';
+import { pgTable, serial, varchar, decimal, timestamp } from 'drizzle-orm/pg-core';
 
 export const products = pgTable('products', {
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 255 }).notNull(),
-  price: numeric('price').notNull(),
-  sku: varchar('sku', { length: 50 }).notNull(),
+  price: decimal('price', { precision: 10, scale: 2 }).notNull(),
+  sku: varchar('sku', { length: 50 }).notNull().unique(),
   createdAt: timestamp().defaultNow().notNull(),
 });

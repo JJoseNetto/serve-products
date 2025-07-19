@@ -1,0 +1,35 @@
+### Criar um novo produto
+POST http://localhost:3333/products
+Content-Type: application/json
+
+{
+  "name": "Camiseta Preta",
+  "price": 49.99,
+  "sku": "CAM-PRE-001"
+}
+
+###
+
+### Buscar todos os produtos
+GET http://localhost:3333/products
+
+###
+
+### Buscar um produto específico (ID = 1)
+GET http://localhost:3333/products/1
+
+###
+
+### Atualizar produto (ID = 1)
+PUT http://localhost:3333/products/1
+Content-Type: application/json
+
+{
+  "name": "Camiseta Azul",
+  "price": 59.90
+}
+
+###
+
+### Remover produto (ID = 1)
+DELETE http://localhost:3333/products/1

@@ -1,4 +1,4 @@
-import { products } from "./products.ts";
+import { products } from "./products";
 
 export const schema = {
     products
